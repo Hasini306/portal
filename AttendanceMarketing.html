@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Attendance Marking</title>
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #0f766e, #134e4a);
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 40px;
+      min-height: 100vh;
+    }
+    .container {
+      background: #ffffff;
+      padding: 35px;
+      border-radius: 18px;
+      width: 650px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+      animation: fadeIn 0.7s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    h2 {
+      text-align: center;
+      color: #134e4a;
+      margin-bottom: 25px;
+      font-size: 28px;
+      font-weight: 700;
+    }
+    label {
+      font-weight: 600;
+      color: #333;
+      margin-top: 12px;
+      display: block;
+      font-size: 15px;
+    }
+    input, select {
+      width: 100%;
+      padding: 12px;
+      margin: 8px 0 18px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      font-size: 14px;
+      transition: 0.3s;
+    }
+    input:focus, select:focus {
+      border-color: #0f766e;
+      box-shadow: 0 0 6px rgba(15,118,110,0.5);
+      outline: none;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+      font-size: 15px;
+    }
+    th, td {
+      border: 1px solid #e5e7eb;
+      padding: 12px;
+      text-align: center;
+    }
+    th {
+      background: #0f766e;
+      color: #fff;
+      font-weight: 600;
+    }
+    tr:nth-child(even) {
+      background: #f9fafb;
+    }
+    tr:hover {
+      background: #e0f2f1;
+    }
+    button {
+      margin-top: 20px;
+      width: 100%;
+      padding: 14px;
+      background: linear-gradient(135deg, #0f766e, #0d9488);
+      color: white;
+      border: none;
+      border-radius: 12px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    button:hover {
+      background: linear-gradient(135deg, #0d9488, #115e59);
+      transform: scale(1.03);
+    }
+    .success {
+      margin-top: 18px;
+      padding: 14px;
+      background: #dcfce7;
+      color: #166534;
+      border: 1px solid #22c55e;
+      border-radius: 10px;
+      font-weight: 600;
+      text-align: center;
+      display: none;
+      animation: fadeIn 0.5s ease-in-out;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Attendance Marking</h2>
+    <form id="attendanceForm">
+      <label for="course">Select Course:</label>
+      <select id="course" required>
+        <option value="">-- Choose Course --</option>
+        <option value="CS101">CS101 - Computer Science</option>
+        <option value="MA102">MA102 - Mathematics</option>
+        <option value="PH103">PH103 - Physics</option>
+        <option value="EN104">EN104 - English</option>
+      </select>
+
+      <label for="date">Select Date:</label>
+      <input type="date" id="date" required>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Student Name</th>
+            <th>Roll No</th>
+            <th>Present</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Alice Johnson</td><td>101</td><td><input type="checkbox" checked></td></tr>
+          <tr><td>Bob Smith</td><td>102</td><td><input type="checkbox"></td></tr>
+          <tr><td>Charlie Brown</td><td>103</td><td><input type="checkbox" checked></td></tr>
+          <tr><td>Diana Prince</td><td>104</td><td><input type="checkbox" checked></td></tr>
+          <tr><td>Edward Green</td><td>105</td><td><input type="checkbox"></td></tr>
+          <tr><td>Fiona White</td><td>106</td><td><input type="checkbox" checked></td></tr>
+          <tr><td>George Black</td><td>107</td><td><input type="checkbox"></td></tr>
+          <tr><td>Hannah Blue</td><td>108</td><td><input type="checkbox" checked></td></tr>
+          <tr><td>Ian Grey</td><td>109</td><td><input type="checkbox"></td></tr>
+          <tr><td>Julia Rose</td><td>110</td><td><input type="checkbox" checked></td></tr>
+          <tr><td>Kevin Young</td><td>111</td><td><input type="checkbox" checked></td></tr>
+          <tr><td>Lily Brown</td><td>112</td><td><input type="checkbox"></td></tr>
+          <tr><td>Michael Stone</td><td>113</td><td><input type="checkbox" checked></td></tr>
+          <tr><td>Nora White</td><td>114</td><td><input type="checkbox" checked></td></tr>
+          <tr><td>Oliver King</td><td>115</td><td><input type="checkbox"></td></tr>
+        </tbody>
+      </table>
+
+      <button type="submit">Submit Attendance</button>
+      <div id="successMsg" class="success">✅ Attendance Submitted Successfully!</div>
+    </form>
+  </div>
+
+  <script>
+    const form = document.getElementById("attendanceForm");
+    const successMsg = document.getElementById("successMsg");
+
+    form.addEventListener("submit", function(e) {
+      e.preventDefault();
+      successMsg.style.display = "block";
+      setTimeout(() => {
+        successMsg.style.display = "none";
+      }, 3500);
+      form.reset();
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Attendance Report</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Tahoma, sans-serif;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      color: #333;
+    }
+    .container {
+      background: #fff;
+      padding: 28px;
+      border-radius: 14px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+      width: 90%;
+      max-width: 800px;
+      animation: fadeIn 0.7s ease-in-out;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 24px;
+      color: #444;
+    }
+    .student {
+      margin-bottom: 18px;
+    }
+    .student-name {
+      font-weight: bold;
+      margin-bottom: 6px;
+    }
+    .progress-bar {
+      width: 100%;
+      height: 20px;
+      background: #eee;
+      border-radius: 10px;
+      overflow: hidden;
+      position: relative;
+    }
+    .progress {
+      height: 100%;
+      border-radius: 10px;
+      text-align: right;
+      padding-right: 6px;
+      line-height: 20px;
+      color: #fff;
+      font-size: 13px;
+      font-weight: bold;
+      transition: width 1s ease-in-out;
+    }
+    .good { background: #4caf50; }
+    .average { background: #ff9800; }
+    .poor { background: #f44336; }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Attendance Report</h1>
+
+    <div class="student">
+      <div class="student-name">Rahul Sharma</div>
+      <div class="progress-bar"><div class="progress good" style="width:85%">85%</div></div>
+    </div>
+
+    <div class="student">
+      <div class="student-name">Ananya Gupta</div>
+      <div class="progress-bar"><div class="progress good" style="width:92%">92%</div></div>
+    </div>
+
+    <div class="student">
+      <div class="student-name">Vikram Singh</div>
+      <div class="progress-bar"><div class="progress average" style="width:72%">72%</div></div>
+    </div>
+
+    <div class="student">
+      <div class="student-name">Priya Nair</div>
+      <div class="progress-bar"><div class="progress poor" style="width:60%">60%</div></div>
+    </div>
+
+    <div class="student">
+      <div class="student-name">Arjun Mehta</div>
+      <div class="progress-bar"><div class="progress good" style="width:88%">88%</div></div>
+    </div>
+
+    <div class="student">
+      <div class="student-name">Simran Kaur</div>
+      <div class="progress-bar"><div class="progress average" style="width:75%">75%</div></div>
+    </div>
+
+    <div class="student">
+      <div class="student-name">Karan Patel</div>
+      <div class="progress-bar"><div class="progress good" style="width:90%">90%</div></div>
+    </div>
+
+    <div class="student">
+      <div class="student-name">Neha Verma</div>
+      <div class="progress-bar"><div class="progress poor" style="width:55%">55%</div></div>
+    </div>
+
+    <div class="student">
+      <div class="student-name">Amit Kumar</div>
+      <div class="progress-bar"><div class="progress average" style="width:70%">70%</div></div>
+    </div>
+
+    <div class="student">
+      <div class="student-name">Sneha Reddy</div>
+      <div class="progress-bar"><div class="progress good" style="width:80%">80%</div></div>
+    </div>
+
+  </div>
+</body>
+</html>
